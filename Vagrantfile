@@ -7,4 +7,9 @@ Vagrant.configure(2) do |config|
 
   config.vm.network "forwarded_port", guest: 80, host: 80
   config.vm.network "forwarded_port", guest: 3306, host: 3306
+  config.vm.network("forwarded_port", guest: 35729, host: 35729)
+  config.vm.provider "parallels" do |v|
+    v.memory = 1024
+    v.cpus = 1
+  end
 end
